@@ -1,3 +1,6 @@
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
+
+title: Recipes & Rating Data Analysis
+description: A personal project that analyzes data from Food.com, submitted an assignment for DSC 80 at UCSD.
