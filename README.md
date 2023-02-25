@@ -75,7 +75,7 @@ Submitters often include the background information of the recipe or their exper
 
 To test whether the missingness in `'average_rating'` depends on `'minutes'`, I ran a permutation testing. Since the distributions of cooking time (`'minutes'`) when values in `'average_rating'` are missing and when values in `'average_rating'` are not missing have similiar means but different shapes, I used the Kolmogorov-Simrnov test statistic. 
 
-The resulted p-value is 0.0, which is less 0.5 (significance level). Therefore, I reject the null hypothesis, which suggests that the missingness in `'average_rating'` **does** depend on `'minutes'`. And based on the distribution of test statistic, the `'average_rating'` tends to be missing more when the cooking time is lower. One possible explanation could be that recipes that require less cooking time tend to be easier. People may not bother to rate an easy recipe they don't put much effort in. 
+The resulted p-value is 0.0, which is less than 0.5 (significance level). Therefore, I reject the null hypothesis, which suggests that the missingness in `'average_rating'` **does** depend on `'minutes'`. And based on the distribution of test statistic, the `'average_rating'` tends to be missing more when the cooking time is lower. One possible explanation could be that recipes that require less cooking time tend to be easier. People may not bother to rate an easy recipe they don't put much effort in. 
 
 Below is a plot visualizing the permutation testing:
 <iframe src="assets/missing_p.html" width=800 height=600 frameBorder=0></iframe>
@@ -88,19 +88,21 @@ Recalling, my research question is **What are the characteristics of high rating
 Specifically, I tested on 4 hypothesis with permutation testing: 
 
 1. Is there a relationship between the cooking time and average rating of recipes?
-    (I define cooking time <= 45 minutes to be normal, cooking time > 45 minutes to be long.)
+    - (I define cooking time <= 45 minutes to be normal, cooking time > 45 minutes to be long.)
     - Null hypothesis: Cooking time doesn't affect average rating of the recipes.
     - Alternative hypothesis: Longer cooking time is related to lower average ratings.
+    
 2. Is there a relationship between the number of steps and average rating of recipes?
-    (I define number of steps <= 12 to be normal, steps > 12 to be many.)
+    - (I define number of steps <= 12 to be normal, steps > 12 to be many.)
     - Null hypothesis: Number of steps doesn't affect average rating of the recipes.
     - Alternative hypothesis: More steps is related to lower average ratings.
+    
 3. Is there a relationship between the number of ingredients and average rating of recipes?
-    (I define number of ingredients <= 9 to be normal, ingredients > 9 to be  many.)
+    - (I define number of ingredients <= 9 to be normal, ingredients > 9 to be many.)
     - Null hypothesis: Number of ingredients doesn't affect average rating of the recipes.
     - Alternative hypothesis: More ingredients is related to lower average ratings.
 4. Is there a relationship between the calories and average rating of recipes?
-    (I define calories <= 700 to be normal, calories > 700 to be  many.)
+    - (I define calories <= 700 to be normal, calories > 700 to be many.)
     - Null hypothesis: Calories doesn't affect average rating of the recipes.
     - Alternative hypothesis: More calories is related to lower average ratings.
 
@@ -108,16 +110,16 @@ Specifically, I tested on 4 hypothesis with permutation testing:
 Since the dependent variable - average rating - is a numeric variable, I used difference in group means as test statistic. THe significance level is 5%.
 
 Below are the results for each of the hypothesis:
-1. Cooking time vs Average time
+1. **Cooking time vs Average time**
 	- p value: 0.0
 	- conclusion: Since the p value is less than 0.05, I reject the null hypoethesis. The result suggests that recipes that require longer cooking time tend to be associated with lower average ratings.
-2. Number of steps vs Average time
+2. **Number of steps vs Average time**
 	- p value: 0.177
 	- conclusion: Since the p value is larger than 0.05, I fail to reject the null hypoethesis. The result suggests that recipe complexity doesn't have an effect on the recipe's average rating.
-3. Number of ingredients vs Average time
+3. **Number of ingredients vs Average time**
 	- p value: 0.918
 	- conclusion: Since the p value is larger than 0.05, I fail to reject the null hypoethesis. The result suggests that preparation difficulty doesn't have an effect on the recipe's average rating.
-4. Calories vs Average time
+4. **Calories vs Average time**
 	- p value: 0.383
 	- conclusion: Since the p value is larger than 0.05, I fail to reject the null hypoethesis. The result suggests that calorie level doesn't have an effect on the recipe's average rating.
 
