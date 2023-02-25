@@ -107,7 +107,7 @@ Specifically, I tested on 4 hypothesis with permutation testing:
     - Alternative hypothesis: More calories is related to lower average ratings.
 
 
-Since the dependent variable - average rating - is a numeric variable, I used difference in group means as test statistic. THe significance level is 5%.
+Since the dependent variable - average rating - is a numeric variable, I used difference in group means as test statistic. The significance level is 5%.
 
 Below are the results for each of the hypothesis:
 1. **Cooking time vs Average time**
