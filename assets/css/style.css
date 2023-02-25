@@ -27,7 +27,7 @@ table {
 
     th,
     td {
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.75rem;
       border: 1px solid $table-border-color;
     }
   }
@@ -37,8 +37,8 @@ table {
 
     dt {
       padding: 0;
-      margin-top: 1rem;
-      font-size: 0.75rem;
+      margin-top: 0.8rem;
+      font-size: 0.5rem;
       font-weight: bold;
     }
 
