@@ -4,11 +4,9 @@
 
 In this project, I used two datasets (*recipes* and *interactions*) that contain all recipes and ratings records from 2008 to 2018. The datasets were directly scraped from [Food.com](https://www.food.com/), a website that ranks in the [top 30](https://www.similarweb.com/top-websites/food-and-drink/cooking-and-recipes/) of the world's most-visited cooking sites. The *recipes* dataset contains 83782 rows and 12 columns, each row corresponding to recipe. The *interactions* dataset contains 731927 rows and 5 columns, each row corresponding to a viewer-submitted review about a recipe.
 
-<<<<<<< HEAD
 My analysis is centered around the question: ==What are the characteristics of high rating recipes?== Specifically, I analyzed how cooking time, cooking complexity, preparation difficulty and calorie level may affect the average ratings of recipes. These four characteristics are related to these columns: (in *recipes* ,) `'minutes'`, `'nutriton'`, `'n_steps'`, `'n_ingredients'`, and (in *ingredients* ,) `'rating'`. Below are a detailed description of each relative column:
-=======
+
 My analysis is centered around the question: <mark>What are the characteristics of high rating recipes?</mark> Specifically, I analyzed how cooking time, cooking complexity, preparation difficulty and calorie level may affect the average ratings of recipes. These four characteristics are related to these columns: (in *recipes* ,) `'minutes'`, `'nutriton'`, `'n_steps'`, `'n_ingredients'`, and (in *ingredients* ,) `'rating'`. Below are a detailed description of each relative column:
->>>>>>> 5ad4174585e1bdf0a4f240823bac1bcdfb839b31
 
 | Column Name | Description |
 | --- | --- |
@@ -18,7 +16,6 @@ My analysis is centered around the question: <mark>What are the characteristics 
 | `'n_ingredients'` | Number of ingredients in a recipe |
 | `'rating'` | Rating given by a viewer |
 
-
 Understanding the question could help a potential submitter to better predict future ratings of his/her recipes. Also, high rating corresponds to a higher public preference. When building a recommender system, researchers may reference to this analysis to have a general sense of what recipes types might have a higher popularity. 
 
 ## Cleaning and EDA
@@ -27,7 +24,7 @@ Understanding the question could help a potential submitter to better predict fu
 
 - **Merging**: In order to calculate the average ratings per recipe, I left merged the *recipe* dataset and the *interaction* dataset. Since one can only rate between 1-5 on Food.com, value 0 in the `'rating'` column acutually means 'missing', so I replaced it with `np.NaN`.
 
-- **Data type Ccnversion**: Since all the data was scraped from the website, list-like variables like `'nutrition'` and `'tags'` were represented as strings. I converted these variables to lists.
+- **Data type conversion**: Since all the data was scraped from the website, list-like variables like `'nutrition'` and `'tags'` were represented as strings. I converted these variables to lists.
 
 - **Adding additonal columns**: I splitted the `'nutriton'` column and added a new column `'calories'` to the dataset since it's key variable in my analysis.
 
@@ -53,6 +50,7 @@ Above is a probabaility density histogram of average ratings for all recipes. Hi
 Above is a plot showing the distribution of cooking time acorss different average rating groups. Based on the shapes of the histogram we can tell that the time distributions are not similiar across groups. The box plot above further shows that the cooking time of recipes rated between 0 ~ 1 ranges wider while the cooking time of recipes between 1 ~ 2, 2 ~ 3, 3 ~ 4 share similiar range.
 
 ### Interesting Aggregates
+
 |   rating_bin |   minutes |   n_steps |   n_ingredients |   calories |
 |-------------:|----------:|----------:|----------------:|-----------:|
 |            1 |   95.9151 |  10.489   |         9.04924 |    445.615 |
