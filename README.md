@@ -1,6 +1,6 @@
 # Recipes & Ratings 
 
-#### Introduction
+### Introduction
 
 In this project, I used two datasets (*recipes* and *interactions*) that contain all recipes and ratings records from 2008 to 2018. The datasets were directly scraped from [Food.com](https://www.food.com/), a website that ranks in the [top 30](https://www.similarweb.com/top-websites/food-and-drink/cooking-and-recipes/) of the world's most-visited cooking sites. The *recipes* dataset contains 83782 rows and 12 columns, each row corresponding to recipe. The *interactions* dataset contains 731927 rows and 5 columns, each row corresponding to a viewer-submitted review about a recipe.
 
@@ -21,7 +21,7 @@ Understanding the question could help a potential submitter to better predict fu
 
 ## Cleaning and EDA
 
-#### Data Cleaning
+### Data Cleaning
 
 - **Merging**: In order to calculate the average ratings per recipe, I left merged the *recipe* dataset and the *interaction* dataset. Since one can only rate between 1-5 on Food.com, value 0 in the `'rating'` column acutually means 'missing', so I replaced it with `np.NaN`.
 
@@ -35,17 +35,17 @@ Understanding the question could help a potential submitter to better predict fu
 
 Below is the `head` of my cleaned Dataframe:
 
-<iframe src="assets/recipes_head.html" width=500 height=auto frameBorder=0></iframe>
+<iframe src="assets/recipes_head.html" width=700 height=500 frameBorder=0></iframe>
 
-#### Univariate Analysis
+### Univariate Analysis
 <iframe src="assets/uni_rating.html" width=800 height=600 frameBorder=0></iframe>
 Above is a probabaility density histogram of average ratings for all recipes. Highly skewed to the left, the plot shows that most of the recipes were highly-rated. Specifically, around 75% of the recipes were rated between 4.5 ~ 5.
 
-#### Bivariate Analysis
+### Bivariate Analysis
 <iframe src="assets/bi_time_rating.html" width=800 height=600 frameBorder=0></iframe>
 Above is a plot showing the distribution of cooking time acorss different average rating groups. Based on the shapes of the histogram we can tell that the time distributions are not similiar across groups. The box plot above further shows that the cooking time of recipes rated between 0 ~ 1 ranges wider while the cooking time of recipes between 1 ~ 2, 2 ~ 3, 3 ~ 4 share similiar range.
 
-#### Interesting Aggregates
+### Interesting Aggregates
 
 |   rating_bin |   minutes |   n_steps |   n_ingredients |   calories |
 |-------------:|----------:|----------:|----------------:|-----------:|
@@ -61,13 +61,13 @@ Above is a table grouped by rating bins (1, 2, 3, 4, 5). Each column represents 
 
 ## Assesment of Missingness
 
-#### NMAR Analysis
+### NMAR Analysis
 
 Three columns in the dataset have missing values: `'average_rating'`, `'description'`, `'tags'`. I believe the column `'description'` is NMAR (Not Missing At Random).
 
 Submitters often include the background information of the recipe or their experiences of desgning the recipe. If a submitter does not have anything particular to say about the recipe, he/she may leave it blank. Therefore, the chance that a value in `'description'` is missing depends on the value itself (e.g. nothing specific to put in the description).
 
-#### Missingness Dependency
+### Missingness Dependency
 
 To test whether the missingness in `'average_rating'` depends on `'minutes'`, I ran a permutation testing. Since the distributions of cooking time (`'minutes'`) when values in `'average_rating'` are missing and when values in `'average_rating'` are not missing have similiar means but different shapes, I used the Kolmogorov-Simrnov test statistic. 
 
@@ -121,7 +121,7 @@ Below are the results for each of the hypothesis:
 
 Based on the analysis abolve, I built a regressor model to **predict the average rating of a recipe**
 
-#### Breaking Down
+### Breaking Down
 
 The response variable for my prediction problem is simply what I want to predict - the average rating calculated from all reviews, which is a continuous, quantitative variable. 
 
@@ -135,7 +135,7 @@ First of all, I created a baseline model using <mark>Decision Tree regressor</ma
 
 *(Note: I chose the Decision Tree regressor because based on my previous exploratory data analysis, the features don't quite share a linear relationship with the response variable, which is average rating. Also, there are large outliers in some of the features like `minutes` which would strongly influence the best fitting line of a regressor model. Therefore, I used a nonlinear regressor model that's robust to outliers in this problem, which is the Decision Tree regressor)*
 
-#### Model Performance
+### Model Performance
 
 The performance of the baseline model, in terms of RMSE, on the training set is 0.027 (rounded to 3 decimal places). On the test data, the performance, in terms of RMSE, is around **0.944** (rounded to 3 decimal spaces).
 
@@ -145,7 +145,7 @@ In future steps, my primary goal would be to improve the model's performance on 
 
 ## Final Model
 
-#### Feature Encoding
+### Feature Encoding
 
 **Quantile Transformation:**
 
@@ -159,7 +159,7 @@ The second thing I did was encode a new feature about the recipe's course catego
 
 Since each recipe may be labeled with multiple course categories, I used a MultiLaber Binarizer to encode the feature.
 
-#### Model Fine-tuning
+### Model Fine-tuning
 
 I decided to use the model I used in the baseline model for my final model due to the reasons stated in the Baseline section. 
 
@@ -183,7 +183,7 @@ Here I performed a fairness analysis of my final model's performance, in terms o
 
 My choice of test statistic was the absolute RMSE difference between the two groups. And my significance level is 0.05.
 
-#### Conclusion
+### Conclusion
 
 The resulting p-value is 0.011. A visualization of the permutation test is as follows: 
 <iframe src="assets/test.html" width=800 height=600 frameBorder=0></iframe>
