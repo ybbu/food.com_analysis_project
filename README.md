@@ -35,7 +35,7 @@ Understanding the question could help a potential submitter to better predict fu
 
 Below is the `head` of my cleaned Dataframe:
 
-<iframe src="assets/recipes_head.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/recipes_head.html" width=500 height=auto frameBorder=0></iframe>
 
 #### Univariate Analysis
 <iframe src="assets/uni_rating.html" width=800 height=600 frameBorder=0></iframe>
@@ -46,6 +46,7 @@ Above is a probabaility density histogram of average ratings for all recipes. Hi
 Above is a plot showing the distribution of cooking time acorss different average rating groups. Based on the shapes of the histogram we can tell that the time distributions are not similiar across groups. The box plot above further shows that the cooking time of recipes rated between 0 ~ 1 ranges wider while the cooking time of recipes between 1 ~ 2, 2 ~ 3, 3 ~ 4 share similiar range.
 
 #### Interesting Aggregates
+
 |   rating_bin |   minutes |   n_steps |   n_ingredients |   calories |
 |-------------:|----------:|----------:|----------------:|-----------:|
 |            1 |   95.9151 |  10.489   |         9.04924 |    445.615 |
