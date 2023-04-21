@@ -4,7 +4,7 @@
 @import "{{ site.theme }}";
 
 .page-header{
-  background-image: url('assets/header.jpg.html');
+  background-image: url('header.jpg.html');
 }
 
 body {
@@ -32,6 +32,6 @@ table {
     td {
       padding: 0.5rem 0.75rem;
       border: 1px solid $table-border-color;
-      font-size: 8px;
+      font-size: 9.5px;
     }
   }
