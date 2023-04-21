@@ -4,7 +4,7 @@
 @import "{{ site.theme }}";
 
 .page-header{
-  background-image: url('header.jpeg');
+  background-image: url('assets/header.jpg.html');
 }
 
 body {
