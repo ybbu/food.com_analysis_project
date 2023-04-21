@@ -52,12 +52,12 @@ Above is a plot showing the distribution of cooking time acorss different averag
 
 #### Interesting Aggregates
 |   rating_bin |   minutes |   n_steps |   n_ingredients |   calories |
-|------------- |---------- |---------- |---------------- |----------- |
+|-------------:|----------:|----------:|----------------:|-----------:|
 |            1 |   95.9151 |  10.489   |         9.04924 |    445.615 |
-|            2 |   94.7684 |  10.7997  |         9.22848 |    462.408 |
-|            3 |   97.5438 |   9.95245 |         9.12667 |    437.183 |
-|            4 |  111.997  |   9.99707 |         9.34799 |    427.305 |
-|            5 |  112.139  |  10.0653  |         9.1802  |    426.219 |
+|            2 |   92.6442 |  10.8072  |         9.23824 |    442.597 |
+|            3 |   97.5383 |   9.94796 |         9.12602 |    426.79  |
+|            4 |  103.584  |   9.99283 |         9.3469  |    423.95  |
+|            5 |   91.951  |  10.0604  |         9.17896 |    418.8   |
 
 
 Above is a table grouped by rating bins (1, 2, 3, 4, 5). Each column represents the mean value of the distribution. Based on the data, we can see that the means of cooking time (`'minutes'`), cooking complexity (`'n_steps'`), and preparation difficulty (`'n_ingredients'`) don't vary much across different groups. However, for the calorie level, it seems that lower-rated recipes tend to have more calories then high-rated ones.
