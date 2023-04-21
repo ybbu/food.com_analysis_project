@@ -35,7 +35,7 @@ Understanding the question could help a potential submitter to better predict fu
 
 Below is the `head` of my cleaned Dataframe:
 
-<iframe src="assets/header.jpg.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/recipes_head.html" width=800 height=600 frameBorder=0></iframe>
 
 #### Univariate Analysis
 <iframe src="assets/uni_rating.html" width=800 height=600 frameBorder=0></iframe>
