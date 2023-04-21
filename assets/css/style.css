@@ -29,7 +29,7 @@ table {
     td {
       padding: 0.5rem 0.75rem;
       border: 1px solid $table-border-color;
-      font-size: 10px;
+      font-size: 8px;
     }
   }
 
@@ -39,7 +39,7 @@ table {
     dt {
       padding: 0;
       margin-top: 0.8rem;
-      font-size: 12px;
+      font-size: 8px;
       font-weight: bold;
     }
 
